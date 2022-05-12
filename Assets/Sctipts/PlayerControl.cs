@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerControl : MonoBehaviour
 {
-    float turnSpeed;
+    float turnSpeed=2;
     private void Update()
     {
         float input = Input.GetAxis("Horizontal");
