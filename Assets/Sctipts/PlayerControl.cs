@@ -11,7 +11,7 @@ public class PlayerControl : MonoBehaviour
 
         Debug.Log(input);
 
-        transform.position = Vector3.left * Time.deltaTime * input * turnSpeed;
+        transform.position += Vector3.left * Time.deltaTime * input * turnSpeed;
 
     }
 
