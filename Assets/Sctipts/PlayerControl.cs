@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public static PlayerControl _insatance;
+    //public static PlayerControl _insatance;
     float _turnSpeed = 5f;
     float _movementLimit = 2.4f;
 
-    private void Awake()
-    {
-        if (_insatance = null)
-        {
-            _insatance = this;
-        }
-    }
+    //private void Awake()
+    //{
+    //    if (_insatance = null)
+    //    {
+    //        _insatance = this;
+    //    }
+    //}
     private void Update()
     {
         MovementHorizontal();

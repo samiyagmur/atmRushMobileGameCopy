@@ -6,12 +6,14 @@ public class StackMoney : MonoBehaviour
 {
     public static StackMoney _insatance;
     public float movementDelay=0.25f;
+    
 
     public List<GameObject> _stacts = new List<GameObject>();
 
     private void Awake()
     {
-        if (_insatance = null)
+        
+        if (_insatance == null)
         {
             _insatance = this;
         }
@@ -19,20 +21,31 @@ public class StackMoney : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerControl._insatance.IsObjectMove())
+        transform.parent = transform;
+        if (Input.GetButton("Fire1"))
         {
             FollowListObject();
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            MOveOrigin();
         }
     }
 
 
     public void StackMoneys(GameObject _stackAbleOtherObject, int index)
-    {
+    {   
+
         _stackAbleOtherObject.transform.parent = transform;
+        
+        Debug.Log(transform.position.y);
         Vector3 newPos= _stacts[index].transform.localPosition;
         newPos.z += 0.5f;
         _stackAbleOtherObject.transform.localPosition = newPos;
+        StartCoroutine(_staclAbleOtherObjectCanBigger());
         _stacts.Add(_stackAbleOtherObject);
+        
 
     }
 
@@ -42,10 +55,10 @@ public class StackMoney : MonoBehaviour
         {
             int index = i;
             Vector3 scale = new Vector3(1,1,1);
-            scale *= 1.5f;
+            scale *= 1.2f;
 
             _stacts[index].transform.DOScale(scale, 0.1f).OnComplete(()=>
-            _stacts[index].transform.DOScale(new Vector3(1,1,1),0.1f));
+            _stacts[index].transform.DOScale(new Vector3(0.5f, 0.5f, 0.5f),0.1f));
             yield return new WaitForSeconds(0.05f);
 
         }
