@@ -27,8 +27,13 @@ public class MoneyCollision : MonoBehaviour
                 StackMoney._instance.StackMoneys(other.gameObject, StackMoney._instance._moneyStack.Count - 1);
             }
         }
-        
-        
+
+        if (other.gameObject.tag=="Door")
+        {   
+           
+            
+            
+        }
         
         
         

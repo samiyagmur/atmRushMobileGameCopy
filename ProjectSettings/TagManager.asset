@@ -6,6 +6,7 @@ TagManager:
   tags:
   - stackObject
   - stackedObject
+  - Door
   layers:
   - Default
   - TransparentFX

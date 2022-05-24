@@ -22,8 +22,9 @@ public class StackMoney : MonoBehaviour
         other.transform.parent = transform;
         Vector3 newPos = _moneyStack[index].transform.localPosition;
         newPos.z += 0.5f;
-
+        newPos.y = 0f;
         other.transform.localPosition = newPos;
+         
         _moneyStack.Add(other);
         StartCoroutine(MakeObjectsBigger());
     }
