@@ -1,24 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class TransformOtherObject : MonoBehaviour
 {
     public  GameObject goldPrefab;
-    void Start()
-    {
-        
-    }
+    
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    Debug.Log("girdi");
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //    if (other.gameObject.tag == "stackedMoney")
+    //    {
 
+    //        other.gameObject = goldPrefab;
+    //        StackMoney._instance.StackMoneys(goldPrefab, StackMoney._instance._moneyStack.Count - 1);
 
-    void TurnOtherPrefab()
-    {
-        
-    }
+    //    }
+    //}
 }

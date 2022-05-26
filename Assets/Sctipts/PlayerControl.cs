@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
     public static PlayerControl _insatance;
     
     float _turnSpeed = 2f;
-    float _movementLimit = 2.4f;
+    //float _movementLimit = 2.4f;
 
     private void Awake()
     {
