@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    public Animator bumpToObject;
+    [SerializeField] GameObject _amy;
+    [SerializeField] Animator bumpToObject;
+    private bool standingPosition;
+    private bool fallingPosition;
     void Start()
     {
         bumpToObject = GetComponent<Animator>();
