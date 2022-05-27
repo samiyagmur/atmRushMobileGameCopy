@@ -10,6 +10,7 @@ TagManager:
   - Atm
   - stackMoney
   - stackGold
+  - box
   layers:
   - Default
   - TransparentFX
