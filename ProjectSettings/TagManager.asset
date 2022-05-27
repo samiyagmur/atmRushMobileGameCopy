@@ -10,7 +10,8 @@ TagManager:
   - Atm
   - stackMoney
   - stackGold
-  - box
+  - ObstacleThorn
+  - ObstacelWall
   layers:
   - Default
   - TransparentFX

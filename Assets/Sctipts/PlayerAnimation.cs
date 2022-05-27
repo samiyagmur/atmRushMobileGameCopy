@@ -4,34 +4,15 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    
-    //[SerializeField] Animator bumpToObject;
-    //private bool standingPosition;
-    //private bool fallingPosition;
-    void Start()
-    {
-        //bumpToObject = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {   
-        
-        
-    }
-    
-
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag=="box")
+        if (collision.gameObject.tag== "ObstaclePendulum")
         {
             Debug.Log("girdi");
             gameObject.GetComponent<Animator>().SetBool("IsFalling", true);
+            gameObject.GetComponent<Animator>().SetBool("IsStanding", true);
+            gameObject.GetComponent<Animator>().SetBool("IsWalking", true);
+            //speed = 0;
         }
     }
-
-    //private bool ÝsCollisinonEnter()
-    //{
-    //    return true;
-    //}
 }
