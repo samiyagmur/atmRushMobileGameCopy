@@ -11,17 +11,10 @@ public class UI_Manager : MonoBehaviour
     // Start is called before the first frame update
     
 
-    public void controlAtmText(GameObject atm)
+    public void controlAtmText()
     {   
         Debug.Log(count);
         count++;
         AtmText.text = count.ToString();
-
-        if (atm.tag!="Player")
-        {
-            Destroy(atm);
-        }
-       
-
     }
 }

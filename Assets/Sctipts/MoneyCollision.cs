@@ -37,7 +37,29 @@ public class MoneyCollision : MonoBehaviour
         }
         if (other.gameObject.tag =="Atm")
         {
-            _instanceUIManager.controlAtmText(gameObject);
+            DestroyGameObject();
+
+
+            _instanceUIManager.controlAtmText();
+
+        }
+        if (other.gameObject.tag == "ObstaclePendulum" || other.gameObject.tag == "ObstacleThorn")
+        {
+            if (gameObject.name == "M_Money")
+            {
+                other.gameObject.GetComponent<BoxCollider>().isTrigger = false;
+            }
+
+            DestroyGameObject();
+        }
+
+    }
+
+    private void DestroyGameObject()
+    {
+        if (gameObject.tag != "Player")
+        {
+            Destroy(gameObject);
         }
 
     }

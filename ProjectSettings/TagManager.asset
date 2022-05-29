@@ -12,6 +12,7 @@ TagManager:
   - stackGold
   - ObstacleThorn
   - ObstacelWall
+  - ObstaclePendulum
   layers:
   - Default
   - TransparentFX
