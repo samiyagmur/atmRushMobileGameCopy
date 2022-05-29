@@ -48,19 +48,29 @@ public class StackMoney : MonoBehaviour
     {
         for (int i = 1; i < _moneyStack.Count; i++)
         {
-            Vector3 pos = _moneyStack[i].transform.localPosition;
-            pos.x = _moneyStack[i - 1].transform.localPosition.x;
-            _moneyStack[i].transform.DOLocalMove(pos,movementDelay);
+            if (_moneyStack[i]!=null)
+            {
+                Vector3 pos = _moneyStack[i].transform.localPosition;
+                pos.x = _moneyStack[i - 1].transform.localPosition.x;
+                _moneyStack[i].transform.DOLocalMove(pos, movementDelay);
+            }
+            
         }
     }
     public void MoveOrigin()
     {
         for (int i = 0; i < _moneyStack.Count; i++)
         {
-            Vector3 pos = _moneyStack[i].transform.localPosition;
-            pos.x = _moneyStack[0].transform.localPosition.x;
-            _moneyStack[i].transform.DOLocalMove(pos, 0.70f);
+            if (_moneyStack[i]!=null)
+            {
+                Vector3 pos = _moneyStack[i].transform.localPosition;
+                pos.x = _moneyStack[0].transform.localPosition.x;
+                _moneyStack[i].transform.DOLocalMove(pos, 0.70f);
+            }
+            
         }
     }
+
+   
 
 }

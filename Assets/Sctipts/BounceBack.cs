@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BounceBack : MonoBehaviour
 {
-    [SerializeField] private float speed = 10;
+    [SerializeField] private float veloctySpeed = 10;
     private float backspeed = 30f;
     private bool ýsCollision;
     Rigidbody rb;
@@ -20,23 +20,23 @@ public class BounceBack : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
+        Debug.Log("Velocity :"+veloctySpeed);
 
         if (ýsCollision)
         {
 
-            if (transform.position.z >= (maxPosLimit.position.z - 7.6f))
+            if (transform.position.z >= (maxPosLimit.position.z - 5f))
             {
-                Debug.Log(transform.position.z);
-                speed = 0;
+                
+                veloctySpeed = 0;
 
                 rb.velocity = Vector3.back * backspeed;
 
                 backspeed -= 1.221f;
 
-                Debug.Log(backspeed);
+                
 
-                //rb.AddForce(new Vector3(0, 0, -force), ForceMode.Impulse);
+              
             }
             else
             {
@@ -52,12 +52,12 @@ public class BounceBack : MonoBehaviour
         }
         else
         {   
-            rb.velocity = Vector3.forward * speed;
+            rb.velocity = Vector3.forward * veloctySpeed;
         }
     }
     void TimeDelay()
     {
-        speed = 10f;
+        veloctySpeed = 10f;
     }
 
     public void SetIsCollision(bool conditionOfCollision)

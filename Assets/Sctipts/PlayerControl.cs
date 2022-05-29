@@ -4,19 +4,10 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public static PlayerControl _insatance;
+    
     
     float _turnSpeed = 2f;
-    //float _movementLimit = 2.4f;
-
-    private void Awake()
-    {
-        if (_insatance = null)
-        {
-            _insatance = this;
-        }
-        
-    }
+    
     private void Update()
     {
         if (Input.GetButton("Fire1"))
@@ -68,12 +59,12 @@ public class PlayerControl : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit,Mathf.Infinity))
         {
-            GameObject firstMoney = StackMoney._instance._moneyStack[0];
+            GameObject _char = StackMoney._instance._moneyStack[0];
             Vector3 hitVec=hit.point;
-            hitVec.y = firstMoney.transform.localPosition.y;
-            hitVec.z = firstMoney.transform.localPosition.z;
+            hitVec.y = _char.transform.localPosition.y;
+            hitVec.z = _char.transform.localPosition.z;
 
-            firstMoney.transform.localPosition = Vector3.MoveTowards(firstMoney.transform.localPosition, hitVec, Time.deltaTime * _turnSpeed);
+            _char.transform.localPosition = Vector3.MoveTowards(_char.transform.localPosition, hitVec, Time.deltaTime * _turnSpeed);
         }
     }
     public bool IsObjectMove()

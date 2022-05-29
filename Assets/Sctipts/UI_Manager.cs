@@ -13,7 +13,7 @@ public class UI_Manager : MonoBehaviour
 
     public void controlAtmText()
     {   
-        Debug.Log(count);
+        //Debug.Log(count);
         count++;
         AtmText.text = count.ToString();
     }
