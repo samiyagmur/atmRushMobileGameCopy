@@ -5,7 +5,7 @@ using DG.Tweening;
 public class StackMoney : MonoBehaviour
 {
     public static StackMoney _instance;
-    public List<GameObject> _moneyStack=new List<GameObject>();
+    public List<GameObject> _moneyStack;
 
     float movementDelay=0.25f;
     private void Awake()
@@ -48,7 +48,7 @@ public class StackMoney : MonoBehaviour
     {
         for (int i = 1; i < _moneyStack.Count; i++)
         {
-            if (_moneyStack[i]!=null)
+            if (_moneyStack[i]!=null && _moneyStack[i-1]!=null)
             {
                 Vector3 pos = _moneyStack[i].transform.localPosition;
                 pos.x = _moneyStack[i - 1].transform.localPosition.x;

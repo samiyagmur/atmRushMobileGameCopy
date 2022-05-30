@@ -7,7 +7,6 @@ using DG.Tweening;
 public class MoneyCollision : MonoBehaviour
 {
     TransformOtherObject _instanceTransform;
-    GameObject GameObjectMoney;
     UI_Manager _instanceUIManager;
     MoveForward _instanceMoveForw;
     PlayerAnimation _instancePlayerAnimation;
@@ -16,7 +15,7 @@ public class MoneyCollision : MonoBehaviour
     private void Awake()
     {
         _instanceUIManager = FindObjectOfType<UI_Manager>();
-        _instanceTransform = GetComponent<TransformOtherObject>();
+        _instanceTransform = FindObjectOfType<TransformOtherObject>();
         _instanceMoveForw = FindObjectOfType<MoveForward>();
         _instancePlayerAnimation = FindObjectOfType<PlayerAnimation>();
         _ýnstanceBounceBack = FindObjectOfType<BounceBack>();
@@ -24,19 +23,24 @@ public class MoneyCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag=="FinisLine")
+        {
+            //Oyun sonu bool IsGameFinish=true;
+        }
         
         if (other.gameObject.tag== "stackMoney" )
         {
             if (!StackMoney._instance._moneyStack.Contains(other.gameObject))
             {
-                GameObjectMoney = other.gameObject;
-                GameObjectMoney.GetComponent<BoxCollider>().isTrigger = false;
-                GameObjectMoney.tag = "stackedMoney";
-                GameObjectMoney.AddComponent<MoneyCollision>();
-                GameObjectMoney.AddComponent<Rigidbody>();
-                GameObjectMoney.GetComponent<Rigidbody>().isKinematic = true;
-                GameObjectMoney.GetComponent<Rigidbody>().useGravity = false;
-                StackMoney._instance.StackMoneys(GameObjectMoney, StackMoney._instance._moneyStack.Count - 1);
+                //TransformOtherObject.stacableObject.money 
+                
+                other.gameObject.GetComponent<BoxCollider>().isTrigger = false;
+                other.gameObject.tag = "stackedMoney";
+                other.gameObject.AddComponent<MoneyCollision>();
+                other.gameObject.AddComponent<Rigidbody>();
+                other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                other.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                StackMoney._instance.StackMoneys(other.gameObject, StackMoney._instance._moneyStack.Count - 1);
                 
 
             }
@@ -63,7 +67,10 @@ public class MoneyCollision : MonoBehaviour
 
             DestroyGameObject();
         }
+        if (other.gameObject.name =="Door")
+        {
 
+        }
     }
 
     private void DestroyGameObject()

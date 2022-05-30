@@ -5,18 +5,21 @@ using System;
 
 public class TransformOtherObject : MonoBehaviour
 {
-    public  GameObject goldPrefab;
-    
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    Debug.Log("girdi");
+    public GameObject money;
+    public GameObject gold;
+    public GameObject diamond;
 
-    //    if (other.gameObject.tag == "stackedMoney")
-    //    {
 
-    //        other.gameObject = goldPrefab;
-    //        StackMoney._instance.StackMoneys(goldPrefab, StackMoney._instance._moneyStack.Count - 1);
+    public enum  stacableObject//TODO:Obje Deðiþimi Yapýlcak
+    {
+        money,
+        gold,
+        diamond
+    }
+    private void Update()
+    {
+        //UnityEditor.EditorWindow.GetWindow<>
+    }
 
-    //    }
-    //}
+
 }

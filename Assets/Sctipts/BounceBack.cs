@@ -9,7 +9,6 @@ public class BounceBack : MonoBehaviour
     private bool ýsCollision;
     Rigidbody rb;
     float force = 3f;
-
     Transform maxPosLimit;
     private void Start()
     {
@@ -20,7 +19,7 @@ public class BounceBack : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Debug.Log("Velocity :"+veloctySpeed);
+        //Debug.Log("Velocity :"+veloctySpeed);
 
         if (ýsCollision)
         {
@@ -69,4 +68,15 @@ public class BounceBack : MonoBehaviour
     {
         maxPosLimit = trans;
     }
+
+    public void CanvasPosOnPlayer()
+    {
+        //gameObject.GetComponent<Canvas>();
+
+        //TODO: Player Düþerken Canvas Text Onunla birlikte hareket edecek.
+
+    }
+
+
+
 }

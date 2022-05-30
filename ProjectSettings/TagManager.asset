@@ -13,6 +13,7 @@ TagManager:
   - ObstacleThorn
   - ObstacelWall
   - ObstaclePendulum
+  - FinisLine
   layers:
   - Default
   - TransparentFX
