@@ -6,18 +6,18 @@ using DG.Tweening;
 
 public class MoneyCollision : MonoBehaviour
 {
-    TransformOtherObject _instanceTransform;
-    UI_Manager _instanceUIManager;
-    MoveForward _instanceMoveForw;
-    PlayerAnimation _instancePlayerAnimation;
+    TransformOtherObject _ýnstanceTransform;
+    UI_Manager _ýnstanceUIManager;
+    MoveForward _ýnstanceMoveForw;
+    PlayerAnimation _ýnstancePlayerAnimation;
     BounceBack _ýnstanceBounceBack;
 
     private void Awake()
     {
-        _instanceUIManager = FindObjectOfType<UI_Manager>();
-        _instanceTransform = FindObjectOfType<TransformOtherObject>();
-        _instanceMoveForw = FindObjectOfType<MoveForward>();
-        _instancePlayerAnimation = FindObjectOfType<PlayerAnimation>();
+        _ýnstanceUIManager = FindObjectOfType<UI_Manager>();
+        _ýnstanceTransform = FindObjectOfType<TransformOtherObject>();
+        _ýnstanceMoveForw = FindObjectOfType<MoveForward>();
+        _ýnstancePlayerAnimation = FindObjectOfType<PlayerAnimation>();
         _ýnstanceBounceBack = FindObjectOfType<BounceBack>();
     }
 
@@ -26,6 +26,10 @@ public class MoneyCollision : MonoBehaviour
         if (other.gameObject.tag=="FinisLine")
         {
             //Oyun sonu bool IsGameFinish=true;
+            _ýnstanceMoveForw.speed = 0;
+            
+            _ýnstanceBounceBack.veloctySpeed = 0;
+            _ýnstancePlayerAnimation.GetComponent<PlayerAnimation>().enabled = false;
         }
         
         if (other.gameObject.tag== "stackMoney" )
@@ -47,7 +51,7 @@ public class MoneyCollision : MonoBehaviour
         }
         if (other.gameObject.tag == "Atm")
         {
-            _instanceUIManager.controlAtmText();
+            _ýnstanceUIManager.controlAtmText();
             
             DestroyGameObject();
 
@@ -56,7 +60,7 @@ public class MoneyCollision : MonoBehaviour
         }
         if (other.gameObject.tag == "ObstaclePendulum" || other.gameObject.tag == "ObstacleThorn")
         {
-            _instancePlayerAnimation.AnimationControl(other);
+            _ýnstancePlayerAnimation.AnimationControl(other);
             _ýnstanceBounceBack.SetIsCollision(true);
             _ýnstanceBounceBack.SetMaxPosLimit(other.gameObject.transform);
 
@@ -85,7 +89,7 @@ public class MoneyCollision : MonoBehaviour
     {
         if (gameObject.tag != "stackedMoney")
         {
-            _instanceMoveForw.speed = 0;
+            _ýnstanceMoveForw.speed = 0;
         }
         
 

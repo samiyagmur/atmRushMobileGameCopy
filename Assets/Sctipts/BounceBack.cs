@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BounceBack : MonoBehaviour
 {
-    [SerializeField] private float veloctySpeed = 10;
+    [SerializeField] public float veloctySpeed = 10;
     private float backspeed = 30f;
     private bool ýsCollision;
     Rigidbody rb;
@@ -32,20 +32,14 @@ public class BounceBack : MonoBehaviour
                 rb.velocity = Vector3.back * backspeed;
 
                 backspeed -= 1.221f;
-
-                
-
-              
             }
             else
             {
 
-                
                 backspeed = 30f;
                 ýsCollision = false;
 
                 Invoke("TimeDelay", 3.7f);
-
 
             }
         }
@@ -76,6 +70,7 @@ public class BounceBack : MonoBehaviour
         //TODO: Player Düþerken Canvas Text Onunla birlikte hareket edecek.
 
     }
+    
 
 
 

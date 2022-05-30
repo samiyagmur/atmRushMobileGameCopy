@@ -9,6 +9,6 @@ public class pendulumObstacle : MonoBehaviour
 
     private void Start()//TODO: öðrenilecek
     {
-        transform.DORotate(new Vector3(0, 0, -90), 2, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Yoyo).SetEase(easy);
+        transform.DORotate(new Vector3(0, 0, -90), 2, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Yoyo)/*Fonksiyonun sondan baþa ve baþtan sonra loopa sokar*/.SetEase(Ease.OutQuad);/*Ývmeli hareket saðlar*/
     }
 }
